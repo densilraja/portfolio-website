@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Densil Raja | Java Full Stack Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#020617;
+    --surface:#0f172a;
+    --surface2:#111827;
+    --card:rgba(255,255,255,0.05);
+    --primary:#6366f1;
+    --primary2:#8b5cf6;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:rgba(255,255,255,0.08);
+    --success:#10b981;
+    --shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(to bottom,var(--bg),#0f172a);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+.container{
+    width:min(1180px,90%);
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(2,6,23,0.85);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-container{
+    width:min(1180px,90%);
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 0;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:800;
+    font-family:'Poppins',sans-serif;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:2rem;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--muted);
+    font-size:0.95rem;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* HERO */
+
+#hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top right, rgba(99,102,241,0.25), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(139,92,246,0.18), transparent 30%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+    width:min(1180px,90%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:0.5rem 1rem;
+    background:rgba(16,185,129,0.15);
+    border:1px solid rgba(16,185,129,0.3);
+    color:var(--success);
+    border-radius:50px;
+    font-size:0.85rem;
+    margin-bottom:1.5rem;
+}
+
+.hero-name{
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:1;
+    font-weight:800;
+}
+
+.hero-name span{
+    color:var(--primary);
+}
+
+.hero-role{
+    margin-top:1.8rem;
+    font-size:1.1rem;
+    line-height:1.8;
+    color:var(--muted);
+    max-width:650px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:1rem;
+    margin-top:2rem;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    padding:1rem 2rem;
+    border-radius:12px;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(99,102,241,0.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    padding:1rem 2rem;
+    border-radius:12px;
+    text-decoration:none;
+    border:1px solid var(--border);
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-outline:hover{
+    border-color:var(--primary);
+    transform:translateY(-4px);
+}
+
+.stats{
+    margin-top:3rem;
+    display:flex;
+    gap:2rem;
+    flex-wrap:wrap;
+}
+
+.stat{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:1.2rem 1.5rem;
+    border-radius:16px;
+    min-width:150px;
+    backdrop-filter:blur(10px);
+}
+
+.stat h2{
+    font-size:2rem;
+    color:var(--primary);
+}
+
+.stat p{
+    margin-top:0.4rem;
+    color:var(--muted);
+    font-size:0.9rem;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    padding:2rem;
+    border-radius:24px;
+    backdrop-filter:blur(10px);
+    box-shadow:var(--shadow);
+}
+
+.code-box{
+    font-family:monospace;
+    line-height:2;
+    color:var(--muted);
+}
+
+.code-box .key{
+    color:#38bdf8;
+}
+
+.code-box .value{
+    color:#f472b6;
+}
+
+/* SECTION */
+
+section{
+    padding:6rem 0;
+}
+
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:3rem;
+    font-family:'Poppins',sans-serif;
+}
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.5rem;
+}
+
+.skill-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:2rem;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(99,102,241,0.5);
+}
+
+.skill-card h3{
+    margin-bottom:1rem;
+    color:var(--primary);
+}
+
+.skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem;
+}
+
+.skill-tags span{
+    padding:0.45rem 0.8rem;
+    background:rgba(99,102,241,0.12);
+    border-radius:50px;
+    font-size:0.85rem;
+    color:#cbd5e1;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:2rem;
+}
+
+.project-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:2rem;
+    transition:0.3s ease;
+    backdrop-filter:blur(10px);
+    box-shadow:var(--shadow);
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(99,102,241,0.5);
+}
+
+.project-number{
+    font-size:3rem;
+    font-weight:800;
+    color:rgba(99,102,241,0.2);
+}
+
+.project-card h3{
+    margin:1rem 0;
+    font-size:1.4rem;
+}
+
+.project-card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.7rem;
+    margin-top:1.5rem;
+}
+
+.project-tags span{
+    padding:0.5rem 0.9rem;
+    background:rgba(139,92,246,0.15);
+    color:#ddd6fe;
+    border-radius:50px;
+    font-size:0.8rem;
+}
+
+/* EXPERIENCE */
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+.timeline-item{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:2rem;
+    border-radius:20px;
+}
+
+.timeline-item h3{
+    font-size:1.3rem;
+}
+
+.timeline-item h4{
+    margin-top:0.5rem;
+    color:var(--primary);
+}
+
+.timeline-item p{
+    margin-top:1rem;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+}
+
+.contact-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:2rem;
+}
+
+.contact-links{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.contact-link{
+    text-decoration:none;
+    color:white;
+    padding:1rem;
+    border:1px solid var(--border);
+    border-radius:14px;
+    transition:0.3s;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.contact-link:hover{
+    border-color:var(--primary);
+    transform:translateX(5px);
+}
+
+/* FOOTER */
+
+footer{
+    padding:2rem 0;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:var(--muted);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+    .hero-content{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-name{
+        font-size:3.2rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">Irudhaya Densil Raja</div>
+
+        <ul class="nav-links">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+        <div>
+
+            <div class="badge">
+                Available for Full Time Opportunities
+            </div>
+
+            <h1 class="hero-name">
+                Hi, I'm <span>Irudhaya Densil Raja</span>
+            </h1>
+
+            <p class="hero-role">
+                Aspiring Java Full Stack Developer with expertise in Java, Spring Boot, React.js, JDBC, Hibernate, and REST API development. Passionate about building scalable enterprise applications and solving real-world problems through clean architecture and modern development practices. Strong foundation in Data Structures & Algorithms with 200+ LeetCode problems solved.
+            </p>
+
+            <div class="hero-btns">
+
+                <a href="#projects" class="btn-primary">
+                    View Projects
+                </a>
+
+                <a href="resume.pdf" class="btn-outline" download>
+                    Download Resume
+                </a>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h2>200+</h2>
+                    <p>LeetCode Problems</p>
+                </div>
+
+                <div class="stat">
+                    <h2>Java</h2>
+                    <p>Full Stack Focus</p>
+                </div>
+
+                <div class="stat">
+                    <h2>2026</h2>
+                    <p>Graduate</p>
+                </div>
+
+                <div class="stat">
+                    <h2>8.1</h2>
+                    <p>CGPA</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="code-box">
+
+                <div>
+                    <span class="key">const</span> developer = {
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;name:
+                    <span class="value">"Densil Raja"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;role:
+                    <span class="value">"Java Full Stack Developer"</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;skills:
+                    <span class="value">["Java","React","Spring Boot"]</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;leetcode:
+                    <span class="value">200+</span>,
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;status:
+                    <span class="value">"Open To Work"</span>
+                </div>
+
+                <div>
+                    };
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+
+                <div class="skill-tags">
+                    <span>Java</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Frontend</h3>
+
+                <div class="skill-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>React.js</span>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Backend</h3>
+
+                <div class="skill-tags">
+                    <span>Spring Boot</span>
+                    <span>JDBC</span>
+                    <span>Hibernate</span>
+                    <span>Servlets</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database</h3>
+
+                <div class="skill-tags">
+                    <span>MySQL</span>
+                    <span>Oracle SQL</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Tools</h3>
+
+                <div class="skill-tags">
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>VS Code</span>
+                    <span>IntelliJ</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Concepts</h3>
+
+                <div class="skill-tags">
+                    <span>OOP</span>
+                    <span>DSA</span>
+                    <span>REST APIs</span>
+                    <span>MVC</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>
+                    Face Recognition Attendance System
+                </h3>
+
+                <p>
+                    Developed an AI-powered attendance management system using OpenCV and Python integrated with backend database systems. Automated attendance workflows and improved operational efficiency through real-time face recognition.
+                </p>
+
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>Spring Boot</span>
+                    <span>REST API</span>
+                </div>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>
+                    Online Polling & Voting System
+                </h3>
+
+                <p>
+                    Built a secure web-based polling platform with authentication and role-based access. Designed responsive frontend modules and backend database integration for seamless vote management.
+                </p>
+
+                <div class="project-tags">
+                    <span>Java</span>
+                    <span>React</span>
+                    <span>MySQL</span>
+                    <span>Authentication</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>
+                    Python Developer Intern
+                </h3>
+
+                <h4>
+                    HCLTech — Chennai
+                </h4>
+
+                <p>
+                    Worked on backend application logic, database connectivity, and web application development workflows for enterprise-level project modules.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <h3>
+                    Artificial Intelligence Intern
+                </h3>
+
+                <h4>
+                    Dewdas Technologies — Bengaluru
+                </h4>
+
+                <p>
+                    Developed computer vision-based attendance automation systems using facial recognition techniques integrated with backend attendance management services.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3 style="margin-bottom:1.5rem;">
+                    Let's Connect
+                </h3>
+
+                <div class="contact-links">
+
+                    <a href="mailto:densil.raja@gmail.com" class="contact-link">
+                        <span>Email</span>
+                        <span>→</span>
+                    </a>
+
+                    <a href="tel:8300149387" class="contact-link">
+                        <span>Mobile</span>
+                        <span>→</span>
+                    </a>
+
+                    <a href="https://github.com/densilraja" target="_blank" class="contact-link">
+                        <span>GitHub</span>
+                        <span>→</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/irudhaya-densil-raja-j/" target="_blank" class="contact-link">
+                        <span>LinkedIn</span>
+                        <span>→</span>
+                    </a>
+
+                    <a href="https://leetcode.com/u/densilraja/" target="_blank" class="contact-link">
+                        <span>LeetCode</span>
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="contact-card">
+
+                <h3 style="margin-bottom:1.5rem;">
+                    Current Focus
+                </h3>
+
+                <p style="color:var(--muted); line-height:1.9;">
+                    Currently focusing on mastering enterprise Java backend development using Spring Boot, RESTful APIs, Hibernate, and scalable full stack architecture. Preparing for Software Engineer and Java Full Stack Developer opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Densil Raja • Java Full Stack Developer
+
+    </div>
+
+</footer>
+
+</body>
+</html>
