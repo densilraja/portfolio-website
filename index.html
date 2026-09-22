@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Densil Raja | Java Full Stack Developer</title>
-    <link rel="icon" type="image/x-icon" href="./dr-favicon.ico">
+    <title>Densil Raja | Java Full Stack & DevOps Engineer</title>
 
+    <link rel="icon" type="image/x-icon" href="./dr-favicon.ico" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
@@ -21,23 +21,24 @@
       }
 
       :root {
-  --bg: #0a0f1f;
-  --surface: #111827;
-  --surface2: #18233d;
-  --card: rgba(255,255,255,0.04);
+        --bg: #070b16;
+        --bg2: #0b1120;
+        --surface: #111827;
+        --surface2: #18233d;
 
-  --primary: #4f46e5;
-  --primary2: #06b6d4;
+        --card: rgba(255, 255, 255, 0.045);
 
-  --text: #f8fafc;
-  --muted: #94a3b8;
+        --primary: #4f46e5;
+        --primary2: #06b6d4;
+        --devops: #22c55e;
 
-  --border: rgba(255,255,255,0.08);
+        --text: #f8fafc;
+        --muted: #94a3b8;
 
-  --success: #22c55e;
+        --border: rgba(255, 255, 255, 0.09);
 
-  --shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
+        --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
 
       html {
         scroll-behavior: smooth;
@@ -45,9 +46,24 @@
 
       body {
         font-family: "Inter", sans-serif;
-        background: linear-gradient(to bottom, var(--bg), #0f172a);
+        background:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(79, 70, 229, 0.08),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 30%,
+            rgba(6, 182, 212, 0.07),
+            transparent 30%
+          ),
+          linear-gradient(to bottom, var(--bg), var(--bg2));
         color: var(--text);
         overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
       }
 
       .container {
@@ -55,24 +71,30 @@
         margin: auto;
       }
 
-      /* NAVBAR */
+      /* =========================
+         NAVBAR
+      ========================= */
 
       nav {
         position: fixed;
         width: 100%;
         top: 0;
         z-index: 1000;
-        background: rgba(2, 6, 23, 0.85);
+
+        background: rgba(2, 6, 23, 0.86);
         backdrop-filter: blur(14px);
+
         border-bottom: 1px solid var(--border);
       }
 
       .nav-container {
         width: min(1180px, 90%);
         margin: auto;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         padding: 1rem 0;
       }
 
@@ -80,7 +102,11 @@
         font-size: 1.3rem;
         font-weight: 800;
         font-family: "Poppins", sans-serif;
-        color: var(--primary);
+
+        background: linear-gradient(135deg, var(--primary2), var(--primary));
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .nav-links {
@@ -100,27 +126,33 @@
         color: white;
       }
 
-      /* HERO */
+      /* =========================
+         HERO
+      ========================= */
 
       #hero {
         min-height: 100vh;
+
         display: flex;
         align-items: center;
+
         position: relative;
+        overflow: hidden;
       }
 
       .hero-bg {
         position: absolute;
         inset: 0;
+
         background:
           radial-gradient(
             circle at top right,
-            rgba(99, 102, 241, 0.25),
+            rgba(79, 70, 229, 0.25),
             transparent 30%
           ),
           radial-gradient(
             circle at bottom left,
-            rgba(139, 92, 246, 0.18),
+            rgba(6, 182, 212, 0.15),
             transparent 30%
           );
       }
@@ -128,74 +160,134 @@
       .hero-content {
         position: relative;
         z-index: 1;
+
         width: min(1180px, 90%);
         margin: auto;
+
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
+
         gap: 4rem;
         align-items: center;
       }
 
       .badge {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+
         padding: 0.5rem 1rem;
-        background: rgba(16, 185, 129, 0.15);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        color: var(--success);
+
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.3);
+
+        color: var(--devops);
+
         border-radius: 50px;
+
         font-size: 0.85rem;
         margin-bottom: 1.5rem;
       }
 
+      .badge::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+
+        background: var(--devops);
+        border-radius: 50%;
+
+        box-shadow: 0 0 10px var(--devops);
+      }
+
       .hero-name {
         font-family: "Poppins", sans-serif;
-        font-size: clamp(3rem, 8vw, 6rem);
+
+        font-size: clamp(3rem, 7vw, 5.5rem);
+
         line-height: 1;
         font-weight: 800;
       }
 
       .hero-name span {
-        color: var(--primary);
+        background: linear-gradient(135deg, #818cf8, #22d3ee);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-title {
+        margin-top: 1.5rem;
+
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+
+        font-weight: 600;
+      }
+
+      .hero-title .java {
+        color: #818cf8;
+      }
+
+      .hero-title .devops {
+        color: #22d3ee;
       }
 
       .hero-role {
-        margin-top: 1.8rem;
-        font-size: 1.1rem;
+        margin-top: 1.3rem;
+
+        font-size: 1.05rem;
         line-height: 1.8;
+
         color: var(--muted);
-        max-width: 650px;
+
+        max-width: 720px;
       }
 
       .hero-btns {
         display: flex;
+
         gap: 1rem;
+
         margin-top: 2rem;
+
         flex-wrap: wrap;
       }
 
-      .btn-primary {
-        padding: 1rem 2rem;
+      .btn-primary,
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0.95rem 1.7rem;
+
         border-radius: 12px;
+
         text-decoration: none;
-        background: linear-gradient(135deg, var(--primary), var(--primary2));
-        color: white;
+
         font-weight: 600;
+
         transition: 0.3s;
-        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary2));
+
+        color: white;
+
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
       }
 
       .btn-primary:hover {
         transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
       }
 
       .btn-outline {
-        padding: 1rem 2rem;
-        border-radius: 12px;
-        text-decoration: none;
         border: 1px solid var(--border);
         color: white;
-        font-weight: 600;
-        transition: 0.3s;
+
+        background: rgba(255, 255, 255, 0.02);
       }
 
       .btn-outline:hover {
@@ -203,48 +295,114 @@
         transform: translateY(-4px);
       }
 
+      /* =========================
+         STATS
+      ========================= */
+
       .stats {
         margin-top: 3rem;
+
         display: flex;
-        gap: 2rem;
+
+        gap: 1rem;
+
         flex-wrap: wrap;
       }
 
       .stat {
         background: var(--card);
+
         border: 1px solid var(--border);
-        padding: 1.2rem 1.5rem;
+
+        padding: 1.1rem 1.4rem;
+
         border-radius: 16px;
-        min-width: 150px;
+
+        min-width: 145px;
+
         backdrop-filter: blur(10px);
       }
 
       .stat h2 {
-        font-size: 2rem;
-        color: var(--primary);
+        font-size: 1.8rem;
+
+        background: linear-gradient(135deg, #818cf8, #22d3ee);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .stat p {
         margin-top: 0.4rem;
+
         color: var(--muted);
-        font-size: 0.9rem;
+
+        font-size: 0.85rem;
       }
 
-      /* HERO CARD */
+      /* =========================
+         HERO CODE CARD
+      ========================= */
 
       .hero-card {
         background: rgba(255, 255, 255, 0.04);
+
         border: 1px solid var(--border);
+
         padding: 2rem;
+
         border-radius: 24px;
-        backdrop-filter: blur(10px);
+
+        backdrop-filter: blur(12px);
+
         box-shadow: var(--shadow);
+
+        position: relative;
+      }
+
+      .hero-card::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 3px;
+
+        background: linear-gradient(
+          90deg,
+          var(--primary),
+          var(--primary2),
+          var(--devops)
+        );
+      }
+
+      .terminal-header {
+        display: flex;
+        gap: 6px;
+
+        margin-bottom: 1.5rem;
+      }
+
+      .terminal-dot {
+        width: 10px;
+        height: 10px;
+
+        border-radius: 50%;
+
+        background: #64748b;
       }
 
       .code-box {
-        font-family: monospace;
+        font-family: "Courier New", monospace;
+
         line-height: 2;
+
         color: var(--muted);
+
+        font-size: 0.9rem;
       }
 
       .code-box .key {
@@ -255,7 +413,13 @@
         color: #f472b6;
       }
 
-      /* SECTION */
+      .code-box .comment {
+        color: #64748b;
+      }
+
+      /* =========================
+         SECTIONS
+      ========================= */
 
       section {
         padding: 6rem 0;
@@ -263,140 +427,242 @@
 
       .section-title {
         font-size: 2.5rem;
+
         margin-bottom: 3rem;
+
         font-family: "Poppins", sans-serif;
       }
 
-      /* SKILLS */
+      .section-subtitle {
+        color: var(--muted);
+
+        max-width: 700px;
+
+        line-height: 1.8;
+
+        margin-top: -2rem;
+        margin-bottom: 3rem;
+      }
+
+      /* =========================
+         SKILLS
+      ========================= */
 
       .skills-grid {
         display: grid;
+
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
         gap: 1.5rem;
       }
 
       .skill-card {
         background: var(--card);
+
         border: 1px solid var(--border);
+
         padding: 2rem;
+
         border-radius: 20px;
+
         transition: 0.3s;
       }
 
       .skill-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-7px);
+
         border-color: rgba(99, 102, 241, 0.5);
       }
 
       .skill-card h3 {
         margin-bottom: 1rem;
-        color: var(--primary);
+
+        color: #818cf8;
       }
 
       .skill-tags {
         display: flex;
+
         flex-wrap: wrap;
+
         gap: 0.6rem;
       }
 
       .skill-tags span {
         padding: 0.45rem 0.8rem;
+
         background: rgba(99, 102, 241, 0.12);
+
         border-radius: 50px;
+
         font-size: 0.85rem;
+
         color: #cbd5e1;
       }
 
-      /* PROJECTS */
+      /* =========================
+         DEVOPS PIPELINE
+      ========================= */
+
+      .pipeline {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+        gap: 1rem;
+
+        margin-top: 2rem;
+      }
+
+      .pipeline-step {
+        position: relative;
+
+        background: var(--card);
+
+        border: 1px solid var(--border);
+
+        padding: 1.5rem;
+
+        border-radius: 18px;
+
+        text-align: center;
+      }
+
+      .pipeline-step h3 {
+        margin-bottom: 0.5rem;
+
+        color: #22d3ee;
+      }
+
+      .pipeline-step p {
+        color: var(--muted);
+
+        font-size: 0.85rem;
+
+        line-height: 1.6;
+      }
+
+      /* =========================
+         PROJECTS
+      ========================= */
 
       .projects-grid {
         display: grid;
+
         grid-template-columns: repeat(2, 1fr);
+
         gap: 2rem;
-      }
-      
-      @media (max-width: 992px) {
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
       }
 
       .project-card {
-            background: var(--card);
-          
-            border: 1px solid var(--border);
-          
-            border-radius: 24px;
-          
-            padding: 2rem;
-          
-            min-height: 500px;
-          
-            display: flex;
-          
-            flex-direction: column;
-          
-            transition: all .3s ease;
-          
-            box-shadow: var(--shadow);
-          }
-          
-          .project-card:hover {
-            transform: translateY(-8px);
-          
-            border-color: var(--primary);
-          
-            box-shadow: 0 20px 50px rgba(79,70,229,.25);
-          }
+        background: var(--card);
+
+        border: 1px solid var(--border);
+
+        border-radius: 24px;
+
+        padding: 2rem;
+
+        min-height: 500px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        transition: 0.3s;
+
+        box-shadow: var(--shadow);
+      }
 
       .project-card:hover {
-        transform: translateY(-10px);
-        border-color: rgba(99, 102, 241, 0.5);
+        transform: translateY(-8px);
+
+        border-color: var(--primary);
+
+        box-shadow: 0 20px 50px rgba(79, 70, 229, 0.2);
       }
 
       .project-number {
         font-size: 3rem;
+
         font-weight: 800;
+
         color: rgba(99, 102, 241, 0.2);
       }
 
       .project-card h3 {
         margin: 1rem 0;
+
         font-size: 1.4rem;
       }
 
       .project-card p {
         color: var(--muted);
+
         line-height: 1.8;
       }
 
       .project-tags {
         display: flex;
+
         flex-wrap: wrap;
+
         gap: 0.7rem;
-        margin-top: 1.5rem;
+
+        margin-top: auto;
+
+        padding-top: 1.5rem;
       }
 
       .project-tags span {
         padding: 0.5rem 0.9rem;
+
         background: rgba(139, 92, 246, 0.15);
+
         color: #ddd6fe;
+
         border-radius: 50px;
+
         font-size: 0.8rem;
       }
 
-      /* EXPERIENCE */
+      .project-status {
+        display: inline-flex;
+
+        padding: 0.25rem 0.7rem;
+
+        border-radius: 50px;
+
+        font-size: 0.72rem;
+
+        font-weight: 600;
+
+        color: var(--devops);
+
+        border: 1px solid rgba(34, 197, 94, 0.3);
+
+        background: rgba(34, 197, 94, 0.1);
+      }
+
+      /* =========================
+         EXPERIENCE
+      ========================= */
 
       .timeline {
         display: flex;
+
         flex-direction: column;
+
         gap: 2rem;
       }
 
       .timeline-item {
         background: var(--card);
+
         border: 1px solid var(--border);
+
         padding: 2rem;
+
         border-radius: 20px;
       }
 
@@ -406,66 +672,98 @@
 
       .timeline-item h4 {
         margin-top: 0.5rem;
-        color: var(--primary);
+
+        color: #818cf8;
       }
 
       .timeline-item p {
         margin-top: 1rem;
+
         color: var(--muted);
+
         line-height: 1.8;
       }
 
-      /* CONTACT */
+      /* =========================
+         CONTACT
+      ========================= */
 
       .contact-grid {
         display: grid;
+
         grid-template-columns: 1fr 1fr;
+
         gap: 2rem;
       }
 
       .contact-card {
         background: var(--card);
+
         border: 1px solid var(--border);
+
         border-radius: 24px;
+
         padding: 2rem;
       }
 
       .contact-links {
         display: flex;
+
         flex-direction: column;
+
         gap: 1rem;
       }
 
       .contact-link {
         text-decoration: none;
+
         color: white;
+
         padding: 1rem;
+
         border: 1px solid var(--border);
+
         border-radius: 14px;
+
         transition: 0.3s;
+
         display: flex;
+
         justify-content: space-between;
+
         align-items: center;
       }
 
       .contact-link:hover {
         border-color: var(--primary);
+
         transform: translateX(5px);
       }
 
-      /* FOOTER */
+      /* =========================
+         FOOTER
+      ========================= */
 
       footer {
         padding: 2rem 0;
+
         border-top: 1px solid var(--border);
+
         text-align: center;
+
         color: var(--muted);
       }
 
-      /* RESPONSIVE */
+      /* =========================
+         RESPONSIVE
+      ========================= */
 
       @media (max-width: 992px) {
         .hero-content {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid {
           grid-template-columns: 1fr;
         }
 
@@ -486,19 +784,30 @@
         .section-title {
           font-size: 2rem;
         }
+
+        .stats {
+          gap: 0.7rem;
+        }
+
+        .stat {
+          min-width: 130px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <nav>
       <div class="nav-container">
-        <div class="logo">Irudhaya Densil Raja</div>
+        <div class="logo">Densil Raja</div>
 
         <ul class="nav-links">
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#devops">DevOps</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -506,46 +815,55 @@
       </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section id="hero">
       <div class="hero-bg"></div>
 
       <div class="hero-content">
         <div>
-          <div class="badge">Available for Full Time Opportunities</div>
+          <div class="badge">Available for Full-Time Opportunities</div>
 
-          <h1 class="hero-name">Hi, I'm <span>Irudhaya Densil Raja</span></h1>
+          <h1 class="hero-name">
+            Hi, I'm
+            <span>Densil Raja</span>
+          </h1>
+
+          <h2 class="hero-title">
+            <span class="java">Java Full Stack Developer</span>
+            <span> | </span>
+            <span class="devops">DevOps Engineer</span>
+          </h2>
 
           <p class="hero-role">
-            Aspiring Java Full Stack Developer with expertise in Java, Spring
-            Boot, React.js, JDBC, Hibernate, and REST API development —
-            backed by hands-on DevOps practice in Docker, CI/CD, and Git-based
-            deployment workflows. Passionate about building scalable
-            enterprise applications and solving real-world problems through
-            clean architecture and modern development practices. Strong
-            foundation in Data Structures & Algorithms with 200+ LeetCode
-            problems solved.
+            B.Tech IT graduate focused on building scalable backend and
+            full-stack applications using Java, Spring Boot, React.js,
+            Hibernate, MySQL, and REST APIs. Experienced with AWS, Docker,
+            CI/CD, GitHub Actions, and Linux-based deployment workflows, with a
+            strong interest in cloud-native application development and
+            automation.
           </p>
 
           <div class="hero-btns">
+            <a href="#projects" class="btn-primary"> View Projects </a>
 
-            <a href="#projects" class="btn-primary">
-              View Projects
+            <a
+              href="./Irudhaya_Densil_Raja_Resume.pdf"
+              class="btn-outline"
+              download
+            >
+              Download Resume
             </a>
-          
-            <a href="./Irudhaya_Densil_Raja_Resume.pdf"
-               class="btn-outline"
-               download>
-               Resume
+
+            <a
+              href="https://github.com/densilraja"
+              target="_blank"
+              class="btn-outline"
+            >
+              GitHub
             </a>
-          
-            <a href="https://github.com/densilraja"
-               target="_blank"
-               class="btn-outline">
-               GitHub
-            </a>
-          
           </div>
 
           <div class="stats">
@@ -555,25 +873,38 @@
             </div>
 
             <div class="stat">
-            <h2>4+</h2>
-            <p>Major Projects</p>
-          </div>
-          
-          <!-- <div class="stat"> -->
-            <!-- <h2>Docker</h2> -->
-            <!-- <p>DevOps Practice</p> -->
-          <!-- </div> -->
-          
-          <div class="stat">
-            <h2>2026</h2>
-            <p>Graduate</p>
-          </div>
+              <h2>4+</h2>
+              <p>Major Projects</p>
+            </div>
+
+            <div class="stat">
+              <h2>AWS</h2>
+              <p>Cloud Practice</p>
+            </div>
+
+            <div class="stat">
+              <h2>2026</h2>
+              <p>B.Tech Graduate</p>
+            </div>
           </div>
         </div>
 
+        <!-- TERMINAL CARD -->
+
         <div class="hero-card">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+
           <div class="code-box">
-            <div><span class="key">const</span> developer = {</div>
+            <div class="comment">// developer-profile.json</div>
+
+            <div>
+              <span class="key">const</span>
+              developer = {
+            </div>
 
             <div>
               &nbsp;&nbsp;name:
@@ -582,24 +913,47 @@
 
             <div>
               &nbsp;&nbsp;role:
-              <span class="value">"Java Full Stack Developer"</span>,
+              <span class="value"> "Java Full Stack Developer" </span>,
             </div>
 
             <div>
-              &nbsp;&nbsp;skills:
-              <span class="value"
-                >["Java","React","Spring Boot","DevOps","Prompting"]</span
-              >,
+              &nbsp;&nbsp;focus:
+              <span class="value"> "Backend + DevOps" </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;backend:
+              <span class="value"> ["Java", "Spring Boot"] </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;frontend:
+              <span class="value"> ["React", "JavaScript"] </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;cloud:
+              <span class="value"> ["AWS", "Docker"] </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;ci_cd:
+              <span class="value"> ["GitHub Actions", "Jenkins"] </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;database:
+              <span class="value"> ["MySQL", "Oracle"] </span>,
             </div>
 
             <div>
               &nbsp;&nbsp;leetcode:
-              <span class="value">200+</span>,
+              <span class="value">"200+"</span>,
             </div>
 
             <div>
               &nbsp;&nbsp;status:
-              <span class="value">"Open To Work"</span>
+              <span class="value"> "Open To Work" </span>
             </div>
 
             <div>};</div>
@@ -607,12 +961,18 @@
         </div>
       </div>
     </section>
-
-    <!-- SKILLS -->
+    <!-- =========================
+         TECHNICAL SKILLS
+    ========================= -->
 
     <section id="skills">
       <div class="container">
         <h2 class="section-title">Technical Skills</h2>
+
+        <p class="section-subtitle">
+          Full-stack development capabilities combined with backend engineering,
+          cloud infrastructure, containerization, and CI/CD practices.
+        </p>
 
         <div class="skills-grid">
           <div class="skill-card">
@@ -626,24 +986,28 @@
           </div>
 
           <div class="skill-card">
-            <h3>Frontend</h3>
+            <h3>Backend Development</h3>
 
             <div class="skill-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>React.js</span>
-              <span>Bootstrap</span>
+              <span>Spring Boot</span>
+              <span>Spring</span>
+              <span>JDBC</span>
+              <span>Hibernate</span>
+              <span>REST APIs</span>
+              <span>Servlets</span>
+              <span>Maven</span>
             </div>
           </div>
 
           <div class="skill-card">
-            <h3>Backend</h3>
+            <h3>Frontend Development</h3>
 
             <div class="skill-tags">
-              <span>Spring Boot</span>
-              <span>JDBC</span>
-              <span>Hibernate</span>
-              <span>Servlets</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React.js</span>
+              <span>Vite</span>
             </div>
           </div>
 
@@ -653,131 +1017,222 @@
             <div class="skill-tags">
               <span>MySQL</span>
               <span>Oracle SQL</span>
+              <span>SQL</span>
+              <span>Database Design</span>
             </div>
           </div>
 
           <div class="skill-card">
-            <h3>Tools</h3>
+            <h3>Cloud & AWS</h3>
+
+            <div class="skill-tags">
+              <span>AWS EC2</span>
+              <span>S3</span>
+              <span>RDS</span>
+              <span>VPC</span>
+              <span>IAM</span>
+              <span>CloudWatch</span>
+              <span>ALB</span>
+              <span>Route 53</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>DevOps & CI/CD</h3>
+
+            <div class="skill-tags">
+              <span>Docker</span>
+              <span>Docker Compose</span>
+              <span>Jenkins</span>
+              <span>GitHub Actions</span>
+              <span>CI/CD</span>
+              <span>Linux</span>
+              <span>Nginx</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Version Control</h3>
 
             <div class="skill-tags">
               <span>Git</span>
               <span>GitHub</span>
-              <span>VS Code</span>
-              <span>IntelliJ</span>
+              <span>Branching</span>
+              <span>Pull Requests</span>
+              <span>Merge</span>
             </div>
           </div>
 
           <div class="skill-card">
-            <h3>Concepts</h3>
+            <h3>Engineering Concepts</h3>
 
             <div class="skill-tags">
               <span>OOP</span>
               <span>DSA</span>
-              <span>REST APIs</span>
               <span>MVC</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>DevOps</h3>
-
-            <div class="skill-tags">
-              <span>Docker</span>
-              <span>CI/CD</span>
-              <span>GitHub Actions</span>
-              <span>AWS</span>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <h3>AI & Prompting</h3>
-
-            <div class="skill-tags">
-              <span>Prompt Engineering</span>
-              <span>ChatGPT</span>
-              <span>Claude</span>
-              <span>GitHub Copilot</span>
+              <span>REST Architecture</span>
+              <span>JWT</span>
+              <span>RBAC</span>
+              <span>Clean Code</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- =========================
+         DEVOPS
+    ========================= -->
+
+    <section id="devops">
+      <div class="container">
+        <h2 class="section-title">DevOps & Deployment</h2>
+
+        <p class="section-subtitle">
+          Hands-on experience with containerization, cloud infrastructure,
+          deployment automation, and CI/CD workflows for full-stack
+          applications.
+        </p>
+
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <h3>01</h3>
+            <h3>Code</h3>
+
+            <p>
+              Git, GitHub, feature branches, pull requests and version control.
+            </p>
+          </div>
+
+          <div class="pipeline-step">
+            <h3>02</h3>
+            <h3>Build</h3>
+
+            <p>
+              Maven builds, React production builds, dependency management and
+              packaging.
+            </p>
+          </div>
+
+          <div class="pipeline-step">
+            <h3>03</h3>
+            <h3>Containerize</h3>
+
+            <p>
+              Docker images, containers and Docker Compose based environments.
+            </p>
+          </div>
+
+          <div class="pipeline-step">
+            <h3>04</h3>
+            <h3>CI/CD</h3>
+
+            <p>
+              GitHub Actions and Jenkins pipelines for automated build and
+              deployment.
+            </p>
+          </div>
+
+          <div class="pipeline-step">
+            <h3>05</h3>
+            <h3>Deploy</h3>
+
+            <p>AWS EC2, S3, RDS, Nginx and production deployment workflows.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <h3>06</h3>
+            <h3>Monitor</h3>
+
+            <p>
+              CloudWatch, application logs, infrastructure checks and
+              troubleshooting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
     <section id="projects">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
 
+        <p class="section-subtitle">
+          Full-stack and backend projects demonstrating API development,
+          database integration, authentication, cloud deployment, and DevOps
+          practices.
+        </p>
+
         <div class="projects-grid">
+          <!-- PROJECT 01 -->
+
           <div class="project-card">
             <div class="project-number">01</div>
-
-            <h3>Face Recognition Attendance System</h3>
-
-            <p>
-              Developed an AI-powered attendance management system using OpenCV
-              and Python integrated with backend database systems. Automated
-              attendance workflows and improved operational efficiency through
-              real-time face recognition.
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
-              <a href="https://github.com/densilraja/attendance-management-system-using-face-recognization-python" target="_blank" class="btn-outline">
-                GitHub
-              </a>
-            </div>
-
-            <div class="project-tags">
-              <span>Python</span>
-              <span>OpenCV</span>
-              <span>Spring Boot</span>
-              <span>REST API</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-number">02</div>
 
             <h3>Employee Management System</h3>
 
             <p>
-              Developed a full stack Employee Management System using React.js,
-              Spring Boot, and MySQL with complete CRUD operations, RESTful
-              APIs, layered architecture, and database integration. Implemented
-              scalable backend services and responsive frontend dashboards for
-              employee data management.
+              Developed a full-stack employee management platform using
+              React.js, Spring Boot, Hibernate, and MySQL. Implemented RESTful
+              APIs, layered backend architecture, CRUD operations, database
+              integration, and responsive frontend workflows. The application
+              was deployed using AWS infrastructure, providing hands-on
+              experience with production-oriented application deployment.
             </p>
+
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
-              <a href="https://github.com/densilraja/Employee-Management-System-FullStack" target="_blank" class="btn-outline">
+              <a
+                href="https://github.com/densilraja/Employee-Management-System-FullStack"
+                target="_blank"
+                class="btn-outline"
+              >
                 GitHub
               </a>
             </div>
+
             <div class="project-tags">
               <span>React.js</span>
               <span>Spring Boot</span>
+              <span>Hibernate</span>
               <span>MySQL</span>
               <span>REST API</span>
+              <span>AWS</span>
               <span>CRUD</span>
-              <span>Hibernate</span>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-number">03</div>
+          <!-- PROJECT 02 -->
 
-            <h3>Enterprise E-Commerce Application <span style="font-size: 0.75rem; font-weight: 600; color: var(--success); border: 1px solid rgba(16,185,129,0.3); background: rgba(16,185,129,0.1); padding: 0.25rem 0.7rem; border-radius: 50px; vertical-align: middle;">In Progress</span></h3>
+          <div class="project-card">
+            <div class="project-number">02</div>
+
+            <h3>
+              Enterprise E-Commerce Platform
+              <span class="project-status"> In Progress </span>
+            </h3>
 
             <p>
-              Building an enterprise-grade e-commerce web application inspired
-              by Zepto using React.js, Spring Boot, and MySQL. JWT
-              authentication and product modules are implemented; RBAC,
-              cart functionality, and admin dashboard are under active
-              development with daily commits.
+              Building an enterprise-oriented e-commerce platform inspired by
+              quick-commerce applications using React.js, Spring Boot, and
+              MySQL. Implemented JWT authentication and product management while
+              developing RBAC, cart functionality, administrative workflows, and
+              scalable backend services.
             </p>
+
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
-              <a href="https://github.com/densilraja/Zepto-Clone-Enterprise-E-Commerce-Platform" target="_blank" class="btn-outline">
+              <a
+                href="https://github.com/densilraja/Zepto-Clone-Enterprise-E-Commerce-Platform"
+                target="_blank"
+                class="btn-outline"
+              >
                 GitHub
               </a>
             </div>
+
             <div class="project-tags">
               <span>React.js</span>
               <span>Spring Boot</span>
@@ -789,35 +1244,82 @@
             </div>
           </div>
 
+          <!-- PROJECT 03 -->
+
           <div class="project-card">
-            <div class="project-number">04</div>
+            <div class="project-number">03</div>
 
             <h3>Online Polling & Voting System</h3>
 
             <p>
               Built a secure web-based polling platform with JWT authentication
-              and role-based access control. Designed a responsive React
-              frontend with an admin dashboard for managing users and
-              positions, backed by a Spring Boot + MySQL backend.
+              and role-based access control. Developed REST APIs using Spring
+              Boot and integrated MySQL for persistent data management.
+              Implemented a React-based administration interface for managing
+              users, positions, and polling workflows.
             </p>
+
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
-              <a href="https://github.com/densilraja/online-polling-voting-system" target="_blank" class="btn-outline">
+              <a
+                href="https://github.com/densilraja/online-polling-voting-system"
+                target="_blank"
+                class="btn-outline"
+              >
                 GitHub
               </a>
             </div>
+
             <div class="project-tags">
               <span>Spring Boot</span>
               <span>React.js</span>
               <span>MySQL</span>
               <span>JWT</span>
               <span>RBAC</span>
+              <span>REST API</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 04 -->
+
+          <div class="project-card">
+            <div class="project-number">04</div>
+
+            <h3>Face Recognition Attendance System</h3>
+
+            <p>
+              Developed an AI-powered attendance management application using
+              Python and OpenCV. Implemented real-time facial recognition to
+              automate attendance capture and integrated database-backed
+              attendance management workflows. The project demonstrates
+              practical application of computer vision, backend integration, and
+              automation.
+            </p>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
+              <a
+                href="https://github.com/densilraja/attendance-management-system-using-face-recognization-python"
+                target="_blank"
+                class="btn-outline"
+              >
+                GitHub
+              </a>
+            </div>
+
+            <div class="project-tags">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>Face Recognition</span>
+              <span>MySQL</span>
+              <span>Automation</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
 
     <section id="experience">
       <div class="container">
@@ -830,9 +1332,10 @@
             <h4>HCLTech — Chennai</h4>
 
             <p>
-              Worked on backend application logic, database connectivity, and
-              web application development workflows for enterprise-level project
-              modules.
+              Worked on backend application logic, database connectivity, Python
+              development workflows, and enterprise application modules. Gained
+              exposure to structured software development practices and
+              enterprise engineering environments.
             </p>
           </div>
 
@@ -842,37 +1345,41 @@
             <h4>Dewdas Technologies — Bengaluru</h4>
 
             <p>
-              Developed computer vision-based attendance automation systems
-              using facial recognition techniques integrated with backend
-              attendance management services.
+              Developed computer vision-based attendance automation using Python
+              and facial recognition techniques. Worked on integrating
+              recognition workflows with backend attendance management and
+              database operations.
             </p>
           </div>
+
           <div class="timeline-item">
-            <h3>Java Full Stack Intern</h3>
+            <h3>Java Full Stack Training</h3>
 
             <h4>JSPIDERS — Bengaluru</h4>
 
             <p>
-              Completed intensive industry-oriented training in Java Full Stack
-              Development covering Core Java, Advanced Java, JDBC, Servlets,
-              Hibernate, Spring Boot, React.js, REST APIs, MySQL, and enterprise
-              application development practices. Worked on real-time project
-              implementation and backend architecture concepts.
+              Completed industry-oriented training covering Core Java, Advanced
+              Java, JDBC, Servlets, Hibernate, Spring, Spring Boot, React.js,
+              REST APIs, MySQL, and enterprise application development.
+              Practiced backend architecture, database integration, API
+              development, and full-stack application implementation.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Let's Connect</h2>
 
         <div class="contact-grid">
           <div class="contact-card">
-            <h3 style="margin-bottom: 1.5rem">Let's Connect</h3>
+            <h3 style="margin-bottom: 1.5rem">Contact</h3>
 
             <div class="contact-links">
               <a href="mailto:densil.raja@gmail.com" class="contact-link">
@@ -918,22 +1425,24 @@
             <h3 style="margin-bottom: 1.5rem">Current Focus</h3>
 
             <p style="color: var(--muted); line-height: 1.9">
-              Currently focusing on enterprise Java backend development with
-              Spring Boot, RESTful APIs, and Hibernate, alongside hands-on
-              DevOps practice — Docker, CI/CD pipelines, and Git-based
-              deployment workflows. Preparing for Java Full Stack Developer
-              and DevOps-focused engineering opportunities.
+              Currently focused on Java backend engineering with Spring Boot,
+              REST APIs, Hibernate, MySQL, authentication, and scalable
+              application architecture. Alongside backend development, building
+              practical DevOps capabilities through Docker, CI/CD, Jenkins,
+              GitHub Actions, AWS, Linux, Nginx, and cloud deployment workflows.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
       <div class="container">
-        © 2026 Densil Raja • Java Full Stack Developer
+        © 2026 Densil Raja • Java Full Stack Developer • DevOps Engineer
       </div>
     </footer>
   </body>
