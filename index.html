@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Densil Raja | Java Full Stack & DevOps Engineer</title>
+    <title>Densil Raja | Java Backend Developer</title>
 
     <link rel="icon" type="image/x-icon" href="./dr-favicon.ico" />
 
@@ -46,6 +46,7 @@
 
       body {
         font-family: "Inter", sans-serif;
+
         background:
           radial-gradient(
             circle at 10% 10%,
@@ -58,6 +59,7 @@
             transparent 30%
           ),
           linear-gradient(to bottom, var(--bg), var(--bg2));
+
         color: var(--text);
         overflow-x: hidden;
       }
@@ -101,6 +103,7 @@
       .logo {
         font-size: 1.3rem;
         font-weight: 800;
+
         font-family: "Poppins", sans-serif;
 
         background: linear-gradient(135deg, var(--primary2), var(--primary));
@@ -111,14 +114,19 @@
 
       .nav-links {
         display: flex;
+
         list-style: none;
+
         gap: 2rem;
       }
 
       .nav-links a {
         text-decoration: none;
+
         color: var(--muted);
+
         font-size: 0.95rem;
+
         transition: 0.3s;
       }
 
@@ -137,11 +145,15 @@
         align-items: center;
 
         position: relative;
+
         overflow: hidden;
+
+        padding-top: 80px;
       }
 
       .hero-bg {
         position: absolute;
+
         inset: 0;
 
         background:
@@ -159,26 +171,33 @@
 
       .hero-content {
         position: relative;
+
         z-index: 1;
 
         width: min(1180px, 90%);
+
         margin: auto;
 
         display: grid;
+
         grid-template-columns: 1.2fr 0.8fr;
 
         gap: 4rem;
+
         align-items: center;
       }
 
       .badge {
         display: inline-flex;
+
         align-items: center;
+
         gap: 0.5rem;
 
         padding: 0.5rem 1rem;
 
         background: rgba(34, 197, 94, 0.12);
+
         border: 1px solid rgba(34, 197, 94, 0.3);
 
         color: var(--devops);
@@ -186,15 +205,18 @@
         border-radius: 50px;
 
         font-size: 0.85rem;
+
         margin-bottom: 1.5rem;
       }
 
       .badge::before {
         content: "";
+
         width: 8px;
         height: 8px;
 
         background: var(--devops);
+
         border-radius: 50%;
 
         box-shadow: 0 0 10px var(--devops);
@@ -206,6 +228,7 @@
         font-size: clamp(3rem, 7vw, 5.5rem);
 
         line-height: 1;
+
         font-weight: 800;
       }
 
@@ -213,6 +236,7 @@
         background: linear-gradient(135deg, #818cf8, #22d3ee);
 
         -webkit-background-clip: text;
+
         -webkit-text-fill-color: transparent;
       }
 
@@ -236,6 +260,7 @@
         margin-top: 1.3rem;
 
         font-size: 1.05rem;
+
         line-height: 1.8;
 
         color: var(--muted);
@@ -256,7 +281,9 @@
       .btn-primary,
       .btn-outline {
         display: inline-flex;
+
         align-items: center;
+
         justify-content: center;
 
         padding: 0.95rem 1.7rem;
@@ -280,11 +307,13 @@
 
       .btn-primary:hover {
         transform: translateY(-4px);
+
         box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
       }
 
       .btn-outline {
         border: 1px solid var(--border);
+
         color: white;
 
         background: rgba(255, 255, 255, 0.02);
@@ -292,6 +321,7 @@
 
       .btn-outline:hover {
         border-color: var(--primary);
+
         transform: translateY(-4px);
       }
 
@@ -329,6 +359,7 @@
         background: linear-gradient(135deg, #818cf8, #22d3ee);
 
         -webkit-background-clip: text;
+
         -webkit-text-fill-color: transparent;
       }
 
@@ -381,6 +412,7 @@
 
       .terminal-header {
         display: flex;
+
         gap: 6px;
 
         margin-bottom: 1.5rem;
@@ -441,6 +473,7 @@
         line-height: 1.8;
 
         margin-top: -2rem;
+
         margin-bottom: 3rem;
       }
 
@@ -515,8 +548,6 @@
       }
 
       .pipeline-step {
-        position: relative;
-
         background: var(--card);
 
         border: 1px solid var(--border);
@@ -526,9 +557,23 @@
         border-radius: 18px;
 
         text-align: center;
+
+        transition: 0.3s;
       }
 
-      .pipeline-step h3 {
+      .pipeline-step:hover {
+        transform: translateY(-5px);
+
+        border-color: rgba(6, 182, 212, 0.4);
+      }
+
+      .pipeline-step h3:first-child {
+        color: #818cf8;
+
+        font-size: 0.8rem;
+      }
+
+      .pipeline-step h3:nth-child(2) {
         margin-bottom: 0.5rem;
 
         color: #22d3ee;
@@ -664,6 +709,14 @@
         padding: 2rem;
 
         border-radius: 20px;
+
+        transition: 0.3s;
+      }
+
+      .timeline-item:hover {
+        transform: translateX(5px);
+
+        border-color: rgba(99, 102, 241, 0.5);
       }
 
       .timeline-item h3 {
@@ -792,6 +845,11 @@
         .stat {
           min-width: 130px;
         }
+
+        .hero-card {
+          padding: 1.3rem;
+          overflow-x: auto;
+        }
       }
     </style>
   </head>
@@ -806,11 +864,25 @@
         <div class="logo">Densil Raja</div>
 
         <ul class="nav-links">
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#devops">DevOps</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#skills"> Skills </a>
+          </li>
+
+          <li>
+            <a href="#devops"> DevOps </a>
+          </li>
+
+          <li>
+            <a href="#projects"> Projects </a>
+          </li>
+
+          <li>
+            <a href="#experience"> Experience </a>
+          </li>
+
+          <li>
+            <a href="#contact"> Contact </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -824,7 +896,7 @@
 
       <div class="hero-content">
         <div>
-          <div class="badge">Available for Full-Time Opportunities</div>
+          <div class="badge">Java Backend Developer</div>
 
           <h1 class="hero-name">
             Hi, I'm
@@ -832,18 +904,20 @@
           </h1>
 
           <h2 class="hero-title">
-            <span class="java">Java Full Stack Developer</span>
-            <span> | </span>
-            <span class="devops">DevOps Engineer</span>
+            <span class="java"> Java Backend </span>
+
+            <span> & </span>
+
+            <span class="devops"> DevOps Engineer </span>
           </h2>
 
           <p class="hero-role">
-            B.Tech IT graduate focused on building scalable backend and
-            full-stack applications using Java, Spring Boot, React.js,
-            Hibernate, MySQL, and REST APIs. Experienced with AWS, Docker,
-            CI/CD, GitHub Actions, and Linux-based deployment workflows, with a
-            strong interest in cloud-native application development and
-            automation.
+            Java Backend Developer focused on building reliable and scalable
+            backend applications using Java, Spring Boot, REST APIs,
+            Hibernate/JPA, MySQL, and SQL. Alongside backend engineering, I am
+            building hands-on expertise in DevOps and cloud technologies
+            including AWS, Docker, Jenkins, CI/CD, Linux, Kubernetes, and
+            Terraform.
           </p>
 
           <div class="hero-btns">
@@ -852,16 +926,17 @@
             <a
               href="java.pdf"
               class="btn-outline"
-              download="Densil_Raja_Java_Resume.pdf"
+              download="Densil_Raja_Java_Backend_Resume.pdf"
             >
-              Java Full Stack Resume
+              Java Backend Resume
             </a>
+
             <a
               href="devops.pdf"
               class="btn-outline"
               download="Densil_Raja_DevOps_Resume.pdf"
             >
-              DevOps & Cloud Resume
+              DevOps Resume
             </a>
 
             <a
@@ -873,35 +948,45 @@
             </a>
           </div>
 
+          <!-- STATS -->
+
           <div class="stats">
             <div class="stat">
-              <h2>200+</h2>
+              <h2>220+</h2>
+
               <p>LeetCode Problems</p>
             </div>
 
             <div class="stat">
               <h2>4+</h2>
+
               <p>Major Projects</p>
             </div>
 
             <div class="stat">
               <h2>AWS</h2>
+
               <p>Cloud Practice</p>
             </div>
 
             <div class="stat">
               <h2>2026</h2>
+
               <p>B.Tech Graduate</p>
             </div>
           </div>
         </div>
 
-        <!-- TERMINAL CARD -->
+        <!-- =========================
+             TERMINAL CARD
+        ========================= -->
 
         <div class="hero-card">
           <div class="terminal-header">
             <span class="terminal-dot"></span>
+
             <span class="terminal-dot"></span>
+
             <span class="terminal-dot"></span>
           </div>
 
@@ -909,33 +994,39 @@
             <div class="comment">// developer-profile.json</div>
 
             <div>
-              <span class="key">const</span>
+              <span class="key"> const </span>
+
               developer = {
             </div>
 
             <div>
               &nbsp;&nbsp;name:
-              <span class="value">"Densil Raja"</span>,
+              <span class="value"> "Densil Raja" </span>,
             </div>
 
             <div>
               &nbsp;&nbsp;role:
-              <span class="value"> "Java Full Stack Developer" </span>,
+              <span class="value"> "Java Backend Developer" </span>,
             </div>
 
             <div>
               &nbsp;&nbsp;focus:
-              <span class="value"> "Backend + DevOps" </span>,
+              <span class="value"> "Backend Engineering" </span>,
             </div>
 
             <div>
               &nbsp;&nbsp;backend:
-              <span class="value"> ["Java", "Spring Boot"] </span>,
+              <span class="value"> ["Java", "Spring Boot", "REST APIs"] </span>,
             </div>
 
             <div>
-              &nbsp;&nbsp;frontend:
-              <span class="value"> ["React", "JavaScript"] </span>,
+              &nbsp;&nbsp;database:
+              <span class="value"> ["MySQL", "SQL", "Hibernate/JPA"] </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;architecture:
+              <span class="value"> ["REST", "Microservices"] </span>,
             </div>
 
             <div>
@@ -944,23 +1035,20 @@
             </div>
 
             <div>
-              &nbsp;&nbsp;ci_cd:
-              <span class="value"> ["GitHub Actions", "Jenkins"] </span>,
+              &nbsp;&nbsp;devops:
+              <span class="value">
+                ["Jenkins", "CI/CD", "Kubernetes", "Terraform"] </span
+              >,
             </div>
 
             <div>
-              &nbsp;&nbsp;database:
-              <span class="value"> ["MySQL", "Oracle"] </span>,
-            </div>
-
-            <div>
-              &nbsp;&nbsp;leetcode:
-              <span class="value">"200+"</span>,
+              &nbsp;&nbsp;problem_solving:
+              <span class="value"> "220+ LeetCode" </span>,
             </div>
 
             <div>
               &nbsp;&nbsp;status:
-              <span class="value"> "Open To Work" </span>
+              <span class="value"> "Java Backend Developer" </span>
             </div>
 
             <div>};</div>
@@ -968,6 +1056,7 @@
         </div>
       </div>
     </section>
+
     <!-- =========================
          TECHNICAL SKILLS
     ========================= -->
@@ -977,110 +1066,183 @@
         <h2 class="section-title">Technical Skills</h2>
 
         <p class="section-subtitle">
-          Full-stack development capabilities combined with backend engineering,
-          cloud infrastructure, containerization, and CI/CD practices.
+          Backend-focused engineering skills with practical experience in Java,
+          Spring Boot, REST APIs, databases, cloud infrastructure,
+          containerization, and CI/CD.
         </p>
 
         <div class="skills-grid">
+          <!-- JAVA -->
+
           <div class="skill-card">
-            <h3>Programming</h3>
+            <h3>Java & Programming</h3>
 
             <div class="skill-tags">
               <span>Java</span>
-              <span>JavaScript</span>
-              <span>Python</span>
+
+              <span>OOP</span>
+
+              <span>Collections</span>
+
+              <span>Exception Handling</span>
+
+              <span>Multithreading</span>
+
+              <span>Java 8+</span>
+
+              <span>DSA</span>
             </div>
           </div>
+
+          <!-- BACKEND -->
 
           <div class="skill-card">
             <h3>Backend Development</h3>
 
             <div class="skill-tags">
               <span>Spring Boot</span>
+
               <span>Spring</span>
-              <span>JDBC</span>
-              <span>Hibernate</span>
+
               <span>REST APIs</span>
+
+              <span>Hibernate</span>
+
+              <span>JPA</span>
+
+              <span>JDBC</span>
+
               <span>Servlets</span>
+
               <span>Maven</span>
             </div>
           </div>
 
+          <!-- ARCHITECTURE -->
+
           <div class="skill-card">
-            <h3>Frontend Development</h3>
+            <h3>Backend Architecture</h3>
+
+            <div class="skill-tags">
+              <span>Microservices</span>
+
+              <span>Layered Architecture</span>
+
+              <span>MVC</span>
+
+              <span>REST Architecture</span>
+
+              <span>JWT</span>
+
+              <span>RBAC</span>
+
+              <span>API Design</span>
+            </div>
+          </div>
+
+          <!-- DATABASE -->
+
+          <div class="skill-card">
+            <h3>Databases</h3>
+
+            <div class="skill-tags">
+              <span>MySQL</span>
+
+              <span>SQL</span>
+
+              <span>Oracle SQL</span>
+
+              <span>PostgreSQL</span>
+
+              <span>MongoDB</span>
+
+              <span>Database Design</span>
+            </div>
+          </div>
+
+          <!-- FRONTEND -->
+
+          <div class="skill-card">
+            <h3>Frontend</h3>
 
             <div class="skill-tags">
               <span>HTML</span>
+
               <span>CSS</span>
+
               <span>JavaScript</span>
+
               <span>React.js</span>
+
               <span>Vite</span>
             </div>
           </div>
 
-          <div class="skill-card">
-            <h3>Database</h3>
-
-            <div class="skill-tags">
-              <span>MySQL</span>
-              <span>Oracle SQL</span>
-              <span>SQL</span>
-              <span>Database Design</span>
-            </div>
-          </div>
+          <!-- AWS -->
 
           <div class="skill-card">
             <h3>Cloud & AWS</h3>
 
             <div class="skill-tags">
-              <span>AWS EC2</span>
+              <span>EC2</span>
+
               <span>S3</span>
+
               <span>RDS</span>
+
               <span>VPC</span>
+
               <span>IAM</span>
-              <span>CloudWatch</span>
+
               <span>ALB</span>
+
               <span>Route 53</span>
+
+              <span>CloudWatch</span>
             </div>
           </div>
+
+          <!-- DEVOPS -->
 
           <div class="skill-card">
             <h3>DevOps & CI/CD</h3>
 
             <div class="skill-tags">
               <span>Docker</span>
+
               <span>Docker Compose</span>
+
               <span>Jenkins</span>
+
               <span>GitHub Actions</span>
+
               <span>CI/CD</span>
+
               <span>Linux</span>
+
               <span>Nginx</span>
             </div>
           </div>
 
+          <!-- INFRA -->
+
           <div class="skill-card">
-            <h3>Version Control</h3>
+            <h3>Infrastructure & Tools</h3>
 
             <div class="skill-tags">
+              <span>Kubernetes</span>
+
+              <span>Terraform</span>
+
+              <span>Ansible</span>
+
               <span>Git</span>
+
               <span>GitHub</span>
-              <span>Branching</span>
-              <span>Pull Requests</span>
-              <span>Merge</span>
-            </div>
-          </div>
 
-          <div class="skill-card">
-            <h3>Engineering Concepts</h3>
+              <span>Postman</span>
 
-            <div class="skill-tags">
-              <span>OOP</span>
-              <span>DSA</span>
-              <span>MVC</span>
-              <span>REST Architecture</span>
-              <span>JWT</span>
-              <span>RBAC</span>
-              <span>Clean Code</span>
+              <span>IntelliJ IDEA</span>
             </div>
           </div>
         </div>
@@ -1093,67 +1255,79 @@
 
     <section id="devops">
       <div class="container">
-        <h2 class="section-title">DevOps & Deployment</h2>
+        <h2 class="section-title">DevOps & Cloud Engineering</h2>
 
         <p class="section-subtitle">
-          Hands-on experience with containerization, cloud infrastructure,
-          deployment automation, and CI/CD workflows for full-stack
-          applications.
+          Continuously building hands-on DevOps and cloud engineering
+          capabilities alongside backend development, with a focus on
+          containerization, CI/CD, AWS infrastructure, automation, and
+          deployment workflows.
         </p>
 
         <div class="pipeline">
           <div class="pipeline-step">
             <h3>01</h3>
+
             <h3>Code</h3>
 
             <p>
-              Git, GitHub, feature branches, pull requests and version control.
+              Git, GitHub, branching strategies, pull requests, version control
+              and collaborative development.
             </p>
           </div>
 
           <div class="pipeline-step">
             <h3>02</h3>
+
             <h3>Build</h3>
 
             <p>
-              Maven builds, React production builds, dependency management and
-              packaging.
+              Maven builds, dependency management, application packaging and
+              production-ready build workflows.
             </p>
           </div>
 
           <div class="pipeline-step">
             <h3>03</h3>
+
             <h3>Containerize</h3>
 
             <p>
-              Docker images, containers and Docker Compose based environments.
+              Docker images, containers, Docker Compose and container-based
+              application environments.
             </p>
           </div>
 
           <div class="pipeline-step">
             <h3>04</h3>
+
             <h3>CI/CD</h3>
 
             <p>
-              GitHub Actions and Jenkins pipelines for automated build and
-              deployment.
+              Jenkins and GitHub Actions pipelines for automated build, testing
+              and deployment workflows.
             </p>
           </div>
 
           <div class="pipeline-step">
             <h3>05</h3>
+
             <h3>Deploy</h3>
 
-            <p>AWS EC2, S3, RDS, Nginx and production deployment workflows.</p>
+            <p>
+              AWS EC2, S3, RDS, networking, Nginx and cloud-based application
+              deployment.
+            </p>
           </div>
 
           <div class="pipeline-step">
             <h3>06</h3>
-            <h3>Monitor</h3>
+
+            <h3>Automate</h3>
 
             <p>
-              CloudWatch, application logs, infrastructure checks and
-              troubleshooting.
+              Continuously learning Kubernetes, Terraform, Ansible and
+              infrastructure automation.
             </p>
           </div>
         </div>
@@ -1169,9 +1343,9 @@
         <h2 class="section-title">Featured Projects</h2>
 
         <p class="section-subtitle">
-          Full-stack and backend projects demonstrating API development,
-          database integration, authentication, cloud deployment, and DevOps
-          practices.
+          Backend and full-stack projects demonstrating REST API development,
+          database integration, authentication, business logic, cloud
+          deployment, and DevOps practices.
         </p>
 
         <div class="projects-grid">
@@ -1183,12 +1357,11 @@
             <h3>Employee Management System</h3>
 
             <p>
-              Developed a full-stack employee management platform using
-              React.js, Spring Boot, Hibernate, and MySQL. Implemented RESTful
-              APIs, layered backend architecture, CRUD operations, database
-              integration, and responsive frontend workflows. The application
-              was deployed using AWS infrastructure, providing hands-on
-              experience with production-oriented application deployment.
+              Developed a full-stack employee management application with Spring
+              Boot, Hibernate, MySQL, and React.js. Designed RESTful APIs,
+              implemented layered backend architecture, CRUD operations,
+              database integration, validation, and business logic. The
+              application was deployed using AWS infrastructure.
             </p>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
@@ -1202,13 +1375,19 @@
             </div>
 
             <div class="project-tags">
-              <span>React.js</span>
+              <span>Java</span>
+
               <span>Spring Boot</span>
+
               <span>Hibernate</span>
-              <span>MySQL</span>
+
               <span>REST API</span>
+
+              <span>MySQL</span>
+
+              <span>React.js</span>
+
               <span>AWS</span>
-              <span>CRUD</span>
             </div>
           </div>
 
@@ -1219,15 +1398,15 @@
 
             <h3>
               Enterprise E-Commerce Platform
+
               <span class="project-status"> In Progress </span>
             </h3>
 
             <p>
-              Building an enterprise-oriented e-commerce platform inspired by
-              quick-commerce applications using React.js, Spring Boot, and
-              MySQL. Implemented JWT authentication and product management while
-              developing RBAC, cart functionality, administrative workflows, and
-              scalable backend services.
+              Building an enterprise-oriented e-commerce platform using Java,
+              Spring Boot, React.js, and MySQL. Developing backend modules, REST
+              APIs, authentication, product management, business logic, RBAC,
+              cart functionality, and scalable application architecture.
             </p>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
@@ -1241,13 +1420,19 @@
             </div>
 
             <div class="project-tags">
-              <span>React.js</span>
+              <span>Java</span>
+
               <span>Spring Boot</span>
+
+              <span>REST APIs</span>
+
               <span>JWT</span>
+
               <span>RBAC</span>
+
               <span>MySQL</span>
-              <span>REST API</span>
-              <span>Enterprise Architecture</span>
+
+              <span>React.js</span>
             </div>
           </div>
 
@@ -1259,11 +1444,11 @@
             <h3>Online Polling & Voting System</h3>
 
             <p>
-              Built a secure web-based polling platform with JWT authentication
-              and role-based access control. Developed REST APIs using Spring
-              Boot and integrated MySQL for persistent data management.
-              Implemented a React-based administration interface for managing
-              users, positions, and polling workflows.
+              Built a secure online voting platform using Spring Boot, React.js,
+              and MySQL. Developed REST APIs and implemented JWT authentication
+              and role-based access control. Added administrative workflows for
+              managing users, positions, candidates, and voting operations. The
+              project was also used as a hands-on DevOps learning environment.
             </p>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
@@ -1277,12 +1462,21 @@
             </div>
 
             <div class="project-tags">
+              <span>Java</span>
+
               <span>Spring Boot</span>
+
+              <span>REST APIs</span>
+
               <span>React.js</span>
+
               <span>MySQL</span>
+
               <span>JWT</span>
-              <span>RBAC</span>
-              <span>REST API</span>
+
+              <span>Docker</span>
+
+              <span>AWS</span>
             </div>
           </div>
 
@@ -1294,12 +1488,10 @@
             <h3>Face Recognition Attendance System</h3>
 
             <p>
-              Developed an AI-powered attendance management application using
-              Python and OpenCV. Implemented real-time facial recognition to
-              automate attendance capture and integrated database-backed
-              attendance management workflows. The project demonstrates
-              practical application of computer vision, backend integration, and
-              automation.
+              Developed an automated attendance management system using Python
+              and OpenCV. Implemented face detection and recognition workflows
+              and integrated the recognition module with database-backed
+              attendance management.
             </p>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem">
@@ -1314,9 +1506,13 @@
 
             <div class="project-tags">
               <span>Python</span>
+
               <span>OpenCV</span>
+
               <span>Face Recognition</span>
-              <span>MySQL</span>
+
+              <span>SQL</span>
+
               <span>Automation</span>
             </div>
           </div>
@@ -1333,18 +1529,39 @@
         <h2 class="section-title">Experience</h2>
 
         <div class="timeline">
-          <div class="timeline-item">
-            <h3>Python Developer Intern</h3>
+          <!-- CURRENT ROLE -->
 
-            <h4>HCLTech — Chennai</h4>
+          <div class="timeline-item">
+            <h3>Java Backend Developer</h3>
+
+            <h4>Anugraha Exceed — Bengaluru</h4>
 
             <p>
-              Worked on backend application logic, database connectivity, Python
-              development workflows, and enterprise application modules. Gained
-              exposure to structured software development practices and
-              enterprise engineering environments.
+              Working on Java-based backend application development with a focus
+              on business logic, REST APIs, database integration, debugging,
+              testing, and enterprise application workflows. Contributing to
+              backend development and gaining practical experience with
+              enterprise Java technologies and legacy application systems.
             </p>
           </div>
+
+          <!-- JSPIDERS -->
+
+          <div class="timeline-item">
+            <h3>Java Full Stack Training</h3>
+
+            <h4>JSpiders — Bengaluru</h4>
+
+            <p>
+              Completed industry-oriented training covering Core Java, Advanced
+              Java, JDBC, Servlets, Hibernate, Spring, Spring Boot, REST APIs,
+              MySQL, HTML, CSS, JavaScript, and React.js. Practiced backend
+              architecture, database integration, API development, and
+              full-stack application implementation.
+            </p>
+          </div>
+
+          <!-- AI -->
 
           <div class="timeline-item">
             <h3>Artificial Intelligence Intern</h3>
@@ -1352,24 +1569,23 @@
             <h4>Dewdas Technologies — Bengaluru</h4>
 
             <p>
-              Developed computer vision-based attendance automation using Python
-              and facial recognition techniques. Worked on integrating
-              recognition workflows with backend attendance management and
-              database operations.
+              Worked on an AI-based attendance management system involving face
+              recognition, backend integration, database operations, and
+              application development.
             </p>
           </div>
 
-          <div class="timeline-item">
-            <h3>Java Full Stack Training</h3>
+          <!-- HCL -->
 
-            <h4>JSPIDERS — Bengaluru</h4>
+          <div class="timeline-item">
+            <h3>Python Developer Intern</h3>
+
+            <h4>HCLTech — Chennai</h4>
 
             <p>
-              Completed industry-oriented training covering Core Java, Advanced
-              Java, JDBC, Servlets, Hibernate, Spring, Spring Boot, React.js,
-              REST APIs, MySQL, and enterprise application development.
-              Practiced backend architecture, database integration, API
-              development, and full-stack application implementation.
+              Gained practical experience in Python development, backend
+              application workflows, database connectivity, debugging, and
+              enterprise software development practices.
             </p>
           </div>
         </div>
@@ -1385,18 +1601,22 @@
         <h2 class="section-title">Let's Connect</h2>
 
         <div class="contact-grid">
+          <!-- CONTACT -->
+
           <div class="contact-card">
             <h3 style="margin-bottom: 1.5rem">Contact</h3>
 
             <div class="contact-links">
               <a href="mailto:densil.raja@gmail.com" class="contact-link">
-                <span>Email</span>
-                <span>→</span>
+                <span> Email </span>
+
+                <span> → </span>
               </a>
 
               <a href="tel:8300149387" class="contact-link">
-                <span>Mobile</span>
-                <span>→</span>
+                <span> Mobile </span>
+
+                <span> → </span>
               </a>
 
               <a
@@ -1404,8 +1624,9 @@
                 target="_blank"
                 class="contact-link"
               >
-                <span>GitHub</span>
-                <span>→</span>
+                <span> GitHub </span>
+
+                <span> → </span>
               </a>
 
               <a
@@ -1413,8 +1634,9 @@
                 target="_blank"
                 class="contact-link"
               >
-                <span>LinkedIn</span>
-                <span>→</span>
+                <span> LinkedIn </span>
+
+                <span> → </span>
               </a>
 
               <a
@@ -1422,21 +1644,30 @@
                 target="_blank"
                 class="contact-link"
               >
-                <span>LeetCode</span>
-                <span>→</span>
+                <span> LeetCode </span>
+
+                <span> → </span>
               </a>
             </div>
           </div>
+
+          <!-- CURRENT FOCUS -->
 
           <div class="contact-card">
             <h3 style="margin-bottom: 1.5rem">Current Focus</h3>
 
             <p style="color: var(--muted); line-height: 1.9">
               Currently focused on Java backend engineering with Spring Boot,
-              REST APIs, Hibernate, MySQL, authentication, and scalable
-              application architecture. Alongside backend development, building
-              practical DevOps capabilities through Docker, CI/CD, Jenkins,
-              GitHub Actions, AWS, Linux, Nginx, and cloud deployment workflows.
+              REST APIs, Hibernate/JPA, MySQL, SQL, authentication,
+              Microservices, and scalable backend architecture.
+
+              <br />
+              <br />
+
+              Alongside backend development, continuously building hands-on
+              DevOps and cloud capabilities through Docker, Jenkins, CI/CD, AWS,
+              Linux, Kubernetes, Terraform, and application deployment
+              workflows.
             </p>
           </div>
         </div>
@@ -1449,7 +1680,7 @@
 
     <footer>
       <div class="container">
-        © 2026 Densil Raja • Java Full Stack Developer • DevOps Engineer
+        © 2026 Densil Raja • Java Backend Developer • DevOps & Cloud
       </div>
     </footer>
   </body>
